@@ -106,13 +106,15 @@ int main(int argc, char *argv[])
 		return(-4);
 	}
 
+	set_escdelay(0);
+
 	cursor = curs_set(0);
 
-	board[0] = newwin(3, 5, 2, 1);
-	board[1] = newwin(3, 15, 6, 1);
-	board[2] = newwin(4, 30, 10, 1);
-
 	do{
+		board[0] = newwin(3, 5, 2, 1);
+		board[1] = newwin(3, 15, 6, 1);
+		board[2] = newwin(4, 30, 10, 1);
+
 		clear();
 
 		mvprintw(0,0, "[%d]", cKey);
@@ -142,11 +144,12 @@ int main(int argc, char *argv[])
 
 		cKey = getch();
 
+		delwin(board[0]);
+		delwin(board[1]);
+		delwin(board[2]);
+
 	}while(cKey != ESC_KEY);
 
-	delwin(board[0]);
-	delwin(board[1]);
-	delwin(board[2]);
 
 
 	curs_set(cursor);
