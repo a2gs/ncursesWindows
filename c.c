@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 #define FIELD2_SZ 30
 
 	int cursor = 0;
-	int  cKey = 0;
+	int cKey = 0;
 	int lineCenter = 0, colCenter = 0;
 	int win0_maxx = 0, win0_maxy = 0;
 	char fmt_STATUS_BAR_1[FMT_STATUS_BAR_1_SZ +1] = {0};
@@ -98,7 +98,6 @@ int main(int argc, char *argv[])
 		printf("O terminal precisa ter no minimo 80x24");
 		return(-2);
 	}
-
 
 	if(has_colors() == FALSE){
 		endwin();
