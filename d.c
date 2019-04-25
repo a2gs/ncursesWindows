@@ -58,6 +58,25 @@ a2gs_ToolBox_WizardReturnFunc_t screen4(void *data);
 
 /* -------------------------------------------------------------------------------------------------------- */
 
+size_t formatTitle(char *titleOut, size_t titleOutSz, char *msg)
+{
+	size_t msgSz = 0;
+	size_t midTitle = 0;
+	size_t midMsg = 0;
+
+	msgSz = strlen(msg);
+
+	if(titleOutSz < msgSz) return(0);
+
+	midTitle = titleOutSz / 2;
+	midMsg   = msgSz / 2;
+
+	memset(titleOut, ' ', titleOutSz);
+	memcpy(titleOut + midTitle - midMsg, msg, msgSz);
+
+	return(1);
+}
+
 void drawDefaultStatusBar(void)
 {
 	char fmt_STATUS_BAR_1[FMT_STATUS_BAR_1_SZ +1] = {0};
@@ -82,10 +101,8 @@ void signalHandle(int sig)
 a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	char *screenTitle = NULL;
-	int thisScreen_maxx = 0, thisScreen_maxy = 0;
-
-	screenTitle = "Title 4";
+	char screenTitle[200] = {0};
+	/* int thisScreen_maxx = 0, thisScreen_maxy = 0; */
 
 	clear();
 	drawDefaultStatusBar();
@@ -93,12 +110,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 	thisScreen = newwin(2+2, 5+5, (LINES/2)-2, (COLS/2)-5);
 	box(thisScreen, 0, 0);
 
+	/*
 	thisScreen_maxx = getmaxx(thisScreen);
 	thisScreen_maxy = getmaxy(thisScreen);
+	*/
 
-	wattron(thisScreen, A_UNDERLINE);
-	mvwprintw(thisScreen, 1, ((thisScreen_maxx - strlen(screenTitle))/2), screenTitle);
-	wattroff(thisScreen, A_UNDERLINE);
+	formatTitle(screenTitle, 10-2, "Title 4");
+	wattron(thisScreen, A_REVERSE);
+	mvwprintw(thisScreen, 1, 1, screenTitle);
+	wattroff(thisScreen, A_REVERSE);
 
 
 	/* ... */
@@ -116,10 +136,8 @@ a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen3(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	char *screenTitle = NULL;
-	int thisScreen_maxx = 0, thisScreen_maxy = 0;
-
-	screenTitle = "Title 3";
+	char screenTitle[200] = {0};
+	/* int thisScreen_maxx = 0, thisScreen_maxy = 0; */
 
 	clear();
 	drawDefaultStatusBar();
@@ -127,12 +145,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen3(void *data)
 	thisScreen = newwin(5+5, 10+10, (LINES/2)-5, (COLS/2)-10);
 	box(thisScreen, 0, 0);
 
+	/*
 	thisScreen_maxx = getmaxx(thisScreen);
 	thisScreen_maxy = getmaxy(thisScreen);
+	*/
 
-	wattron(thisScreen, A_UNDERLINE);
-	mvwprintw(thisScreen, 1, ((thisScreen_maxx - strlen(screenTitle))/2), screenTitle);
-	wattroff(thisScreen, A_UNDERLINE);
+	formatTitle(screenTitle, 20-2, "Title 3");
+	wattron(thisScreen, A_REVERSE);
+	mvwprintw(thisScreen, 1, 1, screenTitle);
+	wattroff(thisScreen, A_REVERSE);
 
 
 	/* ... */
@@ -150,10 +171,8 @@ a2gs_ToolBox_WizardReturnFunc_t screen3(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen2(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	char *screenTitle = NULL;
-	int thisScreen_maxx = 0, thisScreen_maxy = 0;
-
-	screenTitle = "Title 2";
+	char screenTitle[200] = {0};
+	/* int thisScreen_maxx = 0, thisScreen_maxy = 0; */
 
 	clear();
 	drawDefaultStatusBar();
@@ -161,12 +180,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen2(void *data)
 	thisScreen = newwin(10+10, 40+40, (LINES/2)-10, (COLS/2)-40);
 	box(thisScreen, 0, 0);
 
+	/*
 	thisScreen_maxx = getmaxx(thisScreen);
 	thisScreen_maxy = getmaxy(thisScreen);
+	*/
 
-	wattron(thisScreen, A_UNDERLINE);
-	mvwprintw(thisScreen, 1, ((thisScreen_maxx - strlen(screenTitle))/2), screenTitle);
-	wattroff(thisScreen, A_UNDERLINE);
+	formatTitle(screenTitle, 80-2, "Title 2");
+	wattron(thisScreen, A_REVERSE);
+	mvwprintw(thisScreen, 1, 1, screenTitle);
+	wattroff(thisScreen, A_REVERSE);
 
 
 	/* ... */
@@ -184,10 +206,8 @@ a2gs_ToolBox_WizardReturnFunc_t screen2(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen1(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	char *screenTitle = NULL;
-	int thisScreen_maxx = 0, thisScreen_maxy = 0;
-
-	screenTitle = "Title 1";
+	char screenTitle[200] = {0};
+	/* int thisScreen_maxx = 0, thisScreen_maxy = 0; */
 
 	clear();
 	drawDefaultStatusBar();
@@ -195,12 +215,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen1(void *data)
 	thisScreen = newwin(20+20, 60+60, (LINES/2)-20, (COLS/2)-60);
 	box(thisScreen, 0, 0);
 
+	/*
 	thisScreen_maxx = getmaxx(thisScreen);
 	thisScreen_maxy = getmaxy(thisScreen);
+	*/
 
-	wattron(thisScreen, A_UNDERLINE);
-	mvwprintw(thisScreen, 1, ((thisScreen_maxx - strlen(screenTitle))/2), screenTitle);
-	wattroff(thisScreen, A_UNDERLINE);
+	formatTitle(screenTitle, 120-2, "Title 1");
+	wattron(thisScreen, A_REVERSE);
+	mvwprintw(thisScreen, 1, 1, screenTitle);
+	wattroff(thisScreen, A_REVERSE);
 
 
 	/* ... */
@@ -222,9 +245,6 @@ a2gs_ToolBox_WizardReturnFunc_t screen1(void *data)
  */
 int main(int argc, char *argv[])
 {
-#define FIELD1_SZ 50
-#define FIELD2_SZ 30
-
 	int cursor = 0;
 
 	if(initscr() == NULL){;
