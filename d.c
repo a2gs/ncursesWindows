@@ -42,7 +42,6 @@
 
 #define ESC_KEY                              (27)
 
-#define TOTAL_SCREEN                         (3)
 
 /* *** LOCAL PROTOTYPES (if applicable) ************************************************ */
 
