@@ -82,19 +82,15 @@ void signalHandle(int sig)
 a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	int lineCenter = 0, colCenter = 0;
 	char *screenTitle = NULL;
 	int thisScreen_maxx = 0, thisScreen_maxy = 0;
 
 	screenTitle = "Title 4";
 
-	lineCenter = LINES/2;
-	colCenter = COLS/2;
-
 	clear();
 	drawDefaultStatusBar();
 
-	thisScreen = newwin(2+2, 5+5, lineCenter-2, colCenter-5);
+	thisScreen = newwin(2+2, 5+5, (LINES/2)-2, (COLS/2)-5);
 	box(thisScreen, 0, 0);
 
 	thisScreen_maxx = getmaxx(thisScreen);
@@ -120,19 +116,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen3(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	int lineCenter = 0, colCenter = 0;
 	char *screenTitle = NULL;
 	int thisScreen_maxx = 0, thisScreen_maxy = 0;
 
 	screenTitle = "Title 3";
 
-	lineCenter = LINES/2;
-	colCenter = COLS/2;
-
 	clear();
 	drawDefaultStatusBar();
 
-	thisScreen = newwin(5+5, 10+10, lineCenter-5, colCenter-10);
+	thisScreen = newwin(5+5, 10+10, (LINES/2)-5, (COLS/2)-10);
 	box(thisScreen, 0, 0);
 
 	thisScreen_maxx = getmaxx(thisScreen);
@@ -158,19 +150,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen3(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen2(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	int lineCenter = 0, colCenter = 0;
 	char *screenTitle = NULL;
 	int thisScreen_maxx = 0, thisScreen_maxy = 0;
 
 	screenTitle = "Title 2";
 
-	lineCenter = LINES/2;
-	colCenter = COLS/2;
-
 	clear();
 	drawDefaultStatusBar();
 
-	thisScreen = newwin(10+10, 40+40, lineCenter-10, colCenter-40);
+	thisScreen = newwin(10+10, 40+40, (LINES/2)-10, (COLS/2)-40);
 	box(thisScreen, 0, 0);
 
 	thisScreen_maxx = getmaxx(thisScreen);
@@ -196,19 +184,15 @@ a2gs_ToolBox_WizardReturnFunc_t screen2(void *data)
 a2gs_ToolBox_WizardReturnFunc_t screen1(void *data)
 {
 	WINDOW *thisScreen = NULL;
-	int lineCenter = 0, colCenter = 0;
 	char *screenTitle = NULL;
 	int thisScreen_maxx = 0, thisScreen_maxy = 0;
 
 	screenTitle = "Title 1";
 
-	lineCenter = LINES/2;
-	colCenter = COLS/2;
-
 	clear();
 	drawDefaultStatusBar();
 
-	thisScreen = newwin(20+20, 60+60, lineCenter-20, colCenter-60);
+	thisScreen = newwin(20+20, 60+60, (LINES/2)-20, (COLS/2)-60);
 	box(thisScreen, 0, 0);
 
 	thisScreen_maxx = getmaxx(thisScreen);
