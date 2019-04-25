@@ -86,7 +86,7 @@ a2gs_ToolBox_WizardReturnFunc_t screen4(void *data)
 	char *screenTitle = NULL;
 	int thisScreen_maxx = 0, thisScreen_maxy = 0;
 
-	screenTitle = "Title 5";
+	screenTitle = "Title 4";
 
 	lineCenter = LINES/2;
 	colCenter = COLS/2;
