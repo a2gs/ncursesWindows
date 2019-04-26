@@ -18,6 +18,7 @@ all: clean
 	$(CC) -o b b.c $(LIBS) $(CFLAGS)
 	$(CC) -o c c.c $(LIBS) $(CFLAGS) -Wno-unused-but-set-variable
 	$(CC) -o d d.c ./wizardPattern/src/wizard_by_return.c $(LIBS) $(CFLAGS) -I./wizardPattern/inc/ -Wno-incompatible-pointer-types -Wno-unused-but-set-variable -Wno-int-conversion
+	$(CC) -o e e.c $(LIBS) $(CFLAGS)
 
 clean:
-	-$(RM) a b c d
+	-$(RM) a b c d e
