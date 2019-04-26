@@ -1,8 +1,8 @@
-# ncursesWindows
-Testing with ncurses windows
+# ncursesWindows<br>
+Testing with ncurses windows<br><br>
 
-a.c - A simple window
-b.c - ncurses box() usage and key pressed print
-c.c - A window with getting user input
-d.c - Windows with title
-e.c - Print special ncurses chars (window borders and etc)
+a.c - A simple window<br>
+b.c - ncurses box() usage and key pressed print<br>
+c.c - A window with getting user input<br>
+d.c - Windows with title<br>
+e.c - Print special ncurses chars (window borders and etc)<br>
